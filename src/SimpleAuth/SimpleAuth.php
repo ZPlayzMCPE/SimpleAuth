@@ -238,12 +238,12 @@ class SimpleAuth extends PluginBase{
 
 	public function sendAuthenticateMessage(Player $player){
 		$config = $this->provider->getPlayer($player);
-		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("§7§lWelcome to §6Void§bMiner§cPE!"));
+		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("§a§lWelcome to §6Void§bMiner§cPE!"));
 		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("§d§lEnjoy!"));
 		if($config === null){
-			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§7Please register with §e/register <password> §7twice or enter your password twice."));
+			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§aPlease register with §2/register <password> §atwice or enter your password twice."));
 		}else{
-			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§7Please login with §e/login <password) §7or by typing your §epassword §7in chat."));
+			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§aPlease login with §2/login <password) §aor by typing your §2password §ain chat."));
 		}
 	}
 
@@ -439,7 +439,7 @@ class SimpleAuth extends PluginBase{
         $registerCommand->setPermissionMessage($this->getMessage("register.permission"));
 
 		$loginCommand = $this->getCommand("login");
-		$loginCommand->setUsage($this->getMessage("§7Please use: §e/login <password>"));
+		$loginCommand->setUsage($this->getMessage("§7Please use: §e/login <password> §6to login to your account."));
 		$loginCommand->setDescription($this->getMessage("login.description"));
 		$loginCommand->setPermissionMessage($this->getMessage("login.permission"));
 
