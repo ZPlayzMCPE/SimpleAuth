@@ -106,7 +106,7 @@ class SimpleAuth extends PluginBase{
 
         $this->provider->updatePlayer($player, $player->getUniqueId()->toString(), $player->getAddress(), time());
         $player->recalculatePermissions();
-        $player->sendMessage(TextFormat::GREEN . $this->getMessage("login.success"));
+        $player->sendMessage(TextFormat::GREEN . $this->getMessage("§bYou've been succesfully logged into our network!"));
 
 		$this->getMessageTask()->removePlayer($player);
 
@@ -238,16 +238,16 @@ class SimpleAuth extends PluginBase{
 
 	public function sendAuthenticateMessage(Player $player){
 		$config = $this->provider->getPlayer($player);
-		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("join.message1"));
-		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("join.message2"));
+		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("§7§lWelcome to §6Void§bMiner§cPE!"));
+		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("§d§lEnjoy!"));
 		if($config === null){
-			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("join.register"));
+			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§7Please register with §e/register <password> §7twice or enter your password twice."));
 		}else{
-			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("join.login"));
+			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§7Please login with §e/login <password) §7or by typing your §epassword §7in chat."));
 		}
 	}
 
-    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+    public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
         switch ($command->getName()) {
             case "login":
                 if ($sender instanceof Player) {
@@ -434,12 +434,12 @@ class SimpleAuth extends PluginBase{
 
 
         $registerCommand = $this->getCommand("register");
-        $registerCommand->setUsage($this->getMessage("register.usage"));
+        $registerCommand->setUsage($this->getMessage("§7Please use: §e/register <password> §6to register your account."));
         $registerCommand->setDescription($this->getMessage("register.description"));
         $registerCommand->setPermissionMessage($this->getMessage("register.permission"));
 
 		$loginCommand = $this->getCommand("login");
-		$loginCommand->setUsage($this->getMessage("login.usage"));
+		$loginCommand->setUsage($this->getMessage("§7Please use: §e/login <password>"));
 		$loginCommand->setDescription($this->getMessage("login.description"));
 		$loginCommand->setPermissionMessage($this->getMessage("login.permission"));
 
