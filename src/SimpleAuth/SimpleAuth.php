@@ -239,9 +239,9 @@ class SimpleAuth extends PluginBase{
 	public function sendAuthenticateMessage(Player $player){
 		$config = $this->provider->getPlayer($player);
 		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("§a§lWelcome to §6Void§bMiner§cPE!"));
-		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("§d§lEnjoy!"));
+		$player->sendMessage(TextFormat::ITALIC . TextFormat::GRAY . $this->getMessage("§aPlease §2login/register §ato get started."));
 		if($config === null){
-			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§aPlease register with §2/register <password> §atwice or enter your password twice."));
+			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§r§aPlease register with §2/register <password> §atwice or enter your password twice."));
 		}else{
 			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§aPlease login with §2/login <password) §aor by typing your §2password §ain chat."));
 		}
