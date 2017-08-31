@@ -58,7 +58,7 @@ class ShowMessageTask extends PluginTask{
 			if($player==null){
 				continue;
 			}
-			$player->sendPopup(TextFormat::ITALIC . TextFormat::GRAY . $this->getPlugin()->getMessage("join.popup"));
+			$player->sendPopup(TextFormat::ITALIC . TextFormat::GRAY . $this->getPlugin()->getMessage("§bYou're not logged in."));
 		}
 	}
 
