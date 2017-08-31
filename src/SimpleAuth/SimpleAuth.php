@@ -243,7 +243,7 @@ class SimpleAuth extends PluginBase{
 		if($config === null){
 			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§r§aPlease register with §2/register <password> §atwice or enter your password twice."));
 		}else{
-			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§aPlease login with §2/login <password) §aor by typing your §2password §ain chat."));
+			$player->sendMessage(TextFormat::YELLOW . $this->getMessage("§r§aPlease login with §2/login <password> §aor by typing your §2password §ain chat."));
 		}
 	}
 
