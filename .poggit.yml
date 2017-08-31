@@ -1,6 +1,6 @@
 --- # Poggit-CI Manifest
 branches:
-- master
+- patch-1
 projects:
   SimpleAuth:
     path: ""
