@@ -30,7 +30,7 @@ class MySQLPingTask extends PluginTask{
 		$this->database = $database;
 	}
 
-	public function onRun(int $currentTick){
+	public function onRun($currentTick){
 		$this->database->ping();
 	}
 }
